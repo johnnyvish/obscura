@@ -134,7 +134,7 @@ const NavBar = memo(() => (
       whileTap={{ scale: 0.95 }}
       className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:shadow-2xl transition"
     >
-      Pre-Order Now
+      Pre-Order
       <div className="bg-black rounded-full w-6 h-6 flex items-center justify-center">
         <svg
           width="12"
@@ -159,57 +159,56 @@ NavBar.displayName = "NavBar";
 
 /* ------------------------------ HOW IT WORKS ------------------------------ */
 
-const HowItWorksSection = memo(() => (
-  <motion.section
-    id="how-it-works"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
-  >
-    <motion.h2
-      className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+const HowItWorksSection = memo(() => {
+  const steps = [
+    {
+      title: "Assign Tasks",
+      desc: "Tell OE1 what you need.",
+    },
+    {
+      title: "Sleep",
+      desc: "OE1 runs AI-powered workflows overnight.",
+    },
+    {
+      title: "Wake Up to Results",
+      desc: "Find completed work, insights, and progress waiting for you.",
+    },
+  ];
+
+  return (
+    <motion.section
+      id="how-it-works"
+      className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
     >
-      How It Works
-    </motion.h2>
-    <div className="max-w-4xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        {
-          step: "1️⃣",
-          title: "Assign Tasks",
-          desc: "Tell OE1 what you need.",
-        },
-        {
-          step: "2️⃣",
-          title: "Sleep",
-          desc: "OE1 runs AI-powered workflows overnight.",
-        },
-        {
-          step: "3️⃣",
-          title: "Wake Up to Results",
-          desc: "Find completed work, insights, and progress waiting for you.",
-        },
-      ].map((item, index) => (
-        <motion.div
-          key={item.title}
-          className="p-6 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
-          custom={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
-        >
-          <div className="text-4xl mb-4">{item.step}</div>
-          <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
-          <p className="text-lg">{item.desc}</p>
-        </motion.div>
-      ))}
-    </div>
-  </motion.section>
-));
+      <motion.h2
+        className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        How It Works
+      </motion.h2>
+      <div className="max-w-4xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.map((item, index) => (
+          <motion.div
+            key={item.title}
+            className="p-6 rounded-xl bg-[#161618] hover:bg-[#2a2a2a] cursor-pointer"
+            custom={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
+          >
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-600 text-white text-xl font-bold mb-4">
+              {index + 1}
+            </div>
+            <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+            <p className="text-lg">{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </motion.section>
+  );
+});
 HowItWorksSection.displayName = "HowItWorksSection";
 
 /* ------------------------------ WHAT IS OE1? ------------------------------ */
@@ -217,17 +216,17 @@ HowItWorksSection.displayName = "HowItWorksSection";
 const AboutSection = memo(() => (
   <motion.section
     id="about"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
+    // initial={{ opacity: 0, y: 50 }}
+    // whileInView={{ opacity: 1, y: 0 }}
+    // transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
     className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
   >
     <motion.h2
       className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
-      initial={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
     >
       What is OE1?
     </motion.h2>
@@ -261,7 +260,7 @@ const AboutSection = memo(() => (
       ].map((feature, index) => (
         <motion.div
           key={feature.title}
-          className="p-6 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
+          className="p-6 rounded-xl bg-[#161618] hover:bg-[#2a2a2a] cursor-pointer"
           custom={index}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -327,14 +326,14 @@ DesignedForSection.displayName = "DesignedForSection";
 const CTASection = memo(() => (
   <motion.section
     id="cta"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    viewport={{ once: true }}
+    // initial={{ opacity: 0, y: 50 }}
+    // whileInView={{ opacity: 1, y: 0 }}
+    // transition={{ duration: 0.8, ease: "easeOut" }}
+    // viewport={{ once: true }}
     className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white text-center"
   >
     <motion.h2
-      className="text-5xl md:text-6xl font-extrabold mb-6"
+      className="text-7xl md:text-6xl font-extrabold mb-6"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -342,7 +341,7 @@ const CTASection = memo(() => (
       Get work done while you sleep.
     </motion.h2>
     <motion.p
-      className="text-lg md:text-2xl max-w-3xl mb-8 leading-relaxed"
+      className="text-2xl md:text-2xl max-w-3xl mb-8 leading-relaxed"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.8 }}
@@ -420,12 +419,12 @@ FAQSection.displayName = "FAQSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-black to-[#1a1a1a]">
+    <div className="relative min-h-screen bg-black">
       <ParticleBackground />
       <NavBar />
       <HeroSection />
-      <HowItWorksSection />
       <AboutSection />
+      <HowItWorksSection />
       {/* <DesignedForSection /> */}
       <CTASection />
       <FAQSection />
