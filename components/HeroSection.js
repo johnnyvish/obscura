@@ -7,24 +7,24 @@ export default function HeroSection() {
   const videoRef = useRef(null);
 
   // Pause the video after 3 seconds
-  useEffect(() => {
-    const video = videoRef.current;
+  // useEffect(() => {
+  //   const video = videoRef.current;
 
-    if (video) {
-      const handleTimeUpdate = () => {
-        if (video.currentTime >= 3) {
-          video.pause();
-          video.removeEventListener("timeupdate", handleTimeUpdate);
-        }
-      };
+  //   if (video) {
+  //     const handleTimeUpdate = () => {
+  //       if (video.currentTime >= 3) {
+  //         video.pause();
+  //         video.removeEventListener("timeupdate", handleTimeUpdate);
+  //       }
+  //     };
 
-      video.addEventListener("timeupdate", handleTimeUpdate);
+  //     video.addEventListener("timeupdate", handleTimeUpdate);
 
-      return () => {
-        video.removeEventListener("timeupdate", handleTimeUpdate);
-      };
-    }
-  }, []);
+  //     return () => {
+  //       video.removeEventListener("timeupdate", handleTimeUpdate);
+  //     };
+  //   }
+  // }, []);
 
   // Typewriter effect for job titles
   useEffect(() => {
@@ -69,7 +69,7 @@ export default function HeroSection() {
       <div className="relative w-[95%] h-[95%] mt-16 rounded-[48px] overflow-hidden">
         <video
           ref={videoRef}
-          className="w-full h-full object-cover filter blur-lg"
+          className="w-full h-full object-cover filter blur-lg pointer-events-none"
           style={{
             maskImage:
               "radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0) 100%)",
@@ -79,6 +79,7 @@ export default function HeroSection() {
           autoPlay
           muted
           loop
+          playsInline
         >
           <source src="/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
