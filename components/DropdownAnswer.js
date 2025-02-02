@@ -11,7 +11,7 @@ export default function DropdownAnswer({ question, answer }) {
 
   return (
     <button
-      className="flex flex-col justify-center items-center w-[95%] gap-2 md:gap-6 pl-[4vw] md:pl-[16vw]"
+      className="flex flex-col justify-center items-center w-[95%] gap-2 md:gap-9 pl-[4vw] "
       onMouseEnter={() => {
         gsap.to(plusCircleRef.current, {
           duration: 0.1,
