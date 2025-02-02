@@ -111,48 +111,57 @@ const NavBar = () => (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-gradient-to-r from-purple-400 to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition"
+      className="bg-white text-black px-6 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition"
     >
       Pre-order
     </motion.button>
   </motion.nav>
 );
 
-// New FeaturesSection using complementary (amber/yellow) colors
 const FeaturesSection = () => (
-  <motion.section
-    id="features"
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-gray-900 text-white"
-  >
-    <h2 className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-      About OE1
-    </h2>
-    <p className="text-xl md:text-2xl max-w-3xl text-center opacity-90 mb-6">
-    Wake Up to Progress. Let AI Work While You Sleep.
-    </p>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-      <div className="p-6 border border-gray-700 rounded-lg bg-gray-800">
-        <h3 className="text-2xl font-bold mb-4 text-amber-400">🚀 Automate Workflows</h3>
-        <p className="text-lg">
-          Let OE1 handle tasks while you sleep
-        </p>
-      </div>
-      <div className="p-6 border border-gray-700 rounded-lg bg-gray-800">
-        <h3 className="text-2xl font-bold mb-4 text-amber-400">🔍 Analyze & Generate</h3>
-        <p className="text-lg">
-        Get reports, research, and summaries by morning.
-        </p>
-      </div>
-      <div className="p-6 border border-gray-700 rounded-lg bg-gray-800">
-        <h3 className="text-2xl font-bold mb-4 text-amber-400">⚡ Supercharge Productivity</h3>
-        <p className="text-lg">
-        From emails to code, let AI handle it all.
-        </p>
-      </div>
+  <motion.section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-24 py-24 bg-black text-white">
+    {/* "What is OE1?" */}
+    <div className="max-w-3xl text-center pb-32">
+      <h2 className="text-5xl md:text-6xl font-extrabold mb-6">What is OE1?</h2>
+      <p className="text-xl md:text-2xl opacity-90">
+        OE1 is your personal AI agent that works overnight to complete tasks,
+        generate insights, and prepare what you need—so you wake up with
+        results, not to-dos.
+      </p>
+    </div>
+
+    {/* "How it works" */}
+    <div className="max-w-3xl text-center mb-12 bg-white rounded-2xl p-12 text-black">
+      <h3 className="text-4xl md:text-5xl font-bold mb-4">How it works</h3>
+      <ol className="list-decimal list-inside text-xl space-y-4">
+        <li>
+          <strong>Assign Tasks</strong> – Tell OE1 what you need.
+        </li>
+        <li>
+          <strong>Sleep</strong> – OE1 runs AI-powered workflows overnight.
+        </li>
+        <li>
+          <strong>Wake Up to Results</strong> – Find completed work, insights,
+          and progress waiting for you.
+        </li>
+      </ol>
+    </div>
+
+    {/* Call-to-Action */}
+    <div className="max-w-3xl text-center">
+      <h3 className="text-4xl md:text-5xl font-bold mb-4">
+        Get work done while you get sleep.
+      </h3>
+      <p className="text-xl mb-2">Maximize your time.</p>
+      <p className="text-xl mb-2">Wake up to progress.</p>
+      <p className="text-xl mb-6">Experience OE1 today.</p>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="bg-white text-black px-8 py-3 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition"
+      >
+        Pre-Order Now
+      </motion.button>
     </div>
   </motion.section>
 );
@@ -174,17 +183,23 @@ const AboutSection = () => (
     </p>
     <p className="text-lg md:text-xl max-w-3xl text-center opacity-80 mb-6">
       OE1 is your <strong>personal AI agent</strong> that works overnight to{" "}
-      <strong>complete tasks, generate insights, and prepare what you need</strong> — so you wake up with results, not to-dos.
+      <strong>
+        complete tasks, generate insights, and prepare what you need
+      </strong>{" "}
+      — so you wake up with results, not to-dos.
     </p>
     <ul className="text-lg md:text-xl max-w-3xl text-center opacity-80 mb-6 list-disc list-inside space-y-2">
       <li>
-        <strong>🚀 Automate Workflows</strong> – Let OE1 handle tasks while you sleep.
+        <strong>🚀 Automate Workflows</strong> – Let OE1 handle tasks while you
+        sleep.
       </li>
       <li>
-        <strong>🔍 Analyze & Generate</strong> – Get reports, research, and summaries by morning.
+        <strong>🔍 Analyze & Generate</strong> – Get reports, research, and
+        summaries by morning.
       </li>
       <li>
-        <strong>⚡ Supercharge Productivity</strong> – From emails to code, let AI handle it all.
+        <strong>⚡ Supercharge Productivity</strong> – From emails to code, let
+        AI handle it all.
       </li>
     </ul>
     <motion.button
@@ -197,24 +212,23 @@ const AboutSection = () => (
   </motion.section>
 );
 
-
 const FAQSection = () => {
   const questionsAndAnswers = [
     {
       question: "What is OE1?",
       answer:
-        "OE1 is your personal AI agent that works overnight to complete tasks, generate insights, and prepare what you need."
+        "OE1 is your personal AI agent that works overnight to complete tasks, generate insights, and prepare what you need.",
     },
     {
       question: "How does OE1 work?",
       answer:
-        "Simply input your tasks, and our AI processes them while you sleep, delivering the results by morning."
+        "Simply input your tasks, and our AI processes them while you sleep, delivering the results by morning.",
     },
     {
       question: "Who is OE1 for?",
       answer:
-        "OE1 is designed for busy professionals, entrepreneurs, researchers, and developers looking to maximize productivity."
-    }
+        "OE1 is designed for busy professionals, entrepreneurs, researchers, and developers looking to maximize productivity.",
+    },
   ];
 
   return (
@@ -232,11 +246,7 @@ const FAQSection = () => {
         </h2>
       </div>
       {questionsAndAnswers.map((qa, index) => (
-        <DropdownAnswer
-          key={index}
-          question={qa.question}
-          answer={qa.answer}
-        />
+        <DropdownAnswer key={index} question={qa.question} answer={qa.answer} />
       ))}
     </section>
   );
@@ -249,8 +259,8 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <FeaturesSection />
-      <AboutSection />
-      <FAQSection />
+      {/* <AboutSection /> */}
+      {/* <FAQSection /> */}
     </div>
   );
 }
