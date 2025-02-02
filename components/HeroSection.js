@@ -30,13 +30,7 @@ export default function HeroSection() {
   useEffect(() => {
     gsap.registerPlugin(TextPlugin);
 
-    const roles = [
-      "researcher.",
-      "data analyst.",
-      "developer.",
-      "planner.",
-      "project manager.",
-    ];
+    const roles = ["researcher.", "data analyst.", "developer.", "planner."];
 
     // Create a timeline that repeats indefinitely.
     let tl = gsap.timeline({ repeat: -1 });
@@ -62,7 +56,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="flex flex-col items-center justify-center h-screen bg-black relative pt-8">
+    <section className="flex flex-col items-center justify-center h-screen bg-black relative pt-12">
       {/* Text container */}
       <div className="absolute z-10 flex flex-col items-center">
         <h1 className="text-[12rem] font-bold text-white">OE 1</h1>

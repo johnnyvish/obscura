@@ -106,7 +106,7 @@ const NavBar = memo(() => (
     <div className="flex items-center gap-3">
       <Logo />
       <motion.span
-        className="text-2xl font-extrabold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+        className="text-2xl font-extrabold bg-white bg-clip-text text-transparent"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 1 }}
@@ -132,9 +132,9 @@ const NavBar = memo(() => (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:shadow-2xl transition"
+      className="bg-white text-black px-6 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:shadow-2xl transition"
     >
-      Pre-Order
+      Buy
       <div className="bg-black rounded-full w-6 h-6 flex items-center justify-center">
         <svg
           width="12"
@@ -181,7 +181,7 @@ const HowItWorksSection = memo(() => {
       className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
     >
       <motion.h2
-        className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+        className="text-5xl md:text-6xl font-extrabold mb-8 text-center text-white"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -198,7 +198,7 @@ const HowItWorksSection = memo(() => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-purple-400 to-pink-600 text-white text-xl font-bold mb-4">
+            <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white text-black text-xl font-bold mb-4">
               {index + 1}
             </div>
             <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
@@ -223,7 +223,7 @@ const AboutSection = memo(() => (
     className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
   >
     <motion.h2
-      className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
+      className="text-5xl md:text-6xl font-extrabold mb-8 text-center text-white"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
