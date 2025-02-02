@@ -29,7 +29,7 @@ export default function HeroSection() {
       <div className="absolute z-10 flex flex-col items-center">
         <h1 className="text-[12rem] font-bold text-white">OE 1</h1>
         <p className="text-3xl mt-[-2rem] font-semibold text-white">
-          Your overnight AI co-worker.
+          Wake up to results, not to-do&apos;s.
         </p>
       </div>
       <div className="w-[95%] h-[95%] mt-16">
@@ -38,14 +38,14 @@ export default function HeroSection() {
           style={{
             maskImage:
               "radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0) 100%)",
-            WebkitMaskImage:
+            WebkitMaskImagße:
               "radial-gradient(ellipse at center, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 75%, rgba(0,0,0,0) 100%)",
           }}
           autoPlay
           muted
-          loop={false}
+          loop
         >
-          <source src="/hero-video-cut-1.mp4" type="video/mp4" />
+          <source src="/hero-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* <img
