@@ -192,7 +192,7 @@ const HowItWorksSection = memo(() => {
         {steps.map((item, index) => (
           <motion.div
             key={item.title}
-            className="p-6 rounded-xl bg-[#161618] hover:bg-[#2a2a2a] cursor-pointer"
+            className="p-6 rounded-2xl bg-[#161618] hover:bg-[#2a2a2a] cursor-pointer"
             custom={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -396,14 +396,14 @@ const FAQSection = memo(() => (
   >
     <div className="max-w-4xl w-full mx-auto">
       <motion.h2
-        className="text-4xl md:text-6xl font-semibold leading-tight text-center mb-8"
+        className="text-4xl md:text-6xl font-semibold leading-relaxed text-center mb-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         Got questions?
         <br />
-        <span className="bg-gradient-to-r from-purple-400 to-pink-600 inline-block text-transparent bg-clip-text">
+        <span className="bg-gradient-to-r from-purple-400 to-pink-600 inline-block text-transparent bg-clip-text leading-relaxed">
           We’ve got answers.
         </span>
       </motion.h2>
