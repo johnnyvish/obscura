@@ -134,7 +134,7 @@ const NavBar = memo(() => (
       whileTap={{ scale: 0.95 }}
       className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:shadow-2xl transition"
     >
-      Pre-order
+      Pre-Order Now
       <div className="bg-black rounded-full w-6 h-6 flex items-center justify-center">
         <svg
           width="12"
@@ -180,17 +180,17 @@ const HowItWorksSection = memo(() => (
       {[
         {
           step: "1️⃣",
-          title: "Tell OE1 What You Need",
-          desc: "Assign tasks, requests, or projects.",
+          title: "Assign Tasks",
+          desc: "Tell OE1 what you need.",
         },
         {
           step: "2️⃣",
-          title: "Go to Sleep",
+          title: "Sleep",
           desc: "OE1 runs AI-powered workflows overnight.",
         },
         {
           step: "3️⃣",
-          title: "Wake Up Ready",
+          title: "Wake Up to Results",
           desc: "Find completed work, insights, and progress waiting for you.",
         },
       ].map((item, index) => (
@@ -274,13 +274,6 @@ const AboutSection = memo(() => (
         </motion.div>
       ))}
     </div>
-    <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="mt-8 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition"
-    >
-      Try OE1 Now
-    </motion.button>
   </motion.section>
 ));
 AboutSection.displayName = "AboutSection";
@@ -328,6 +321,44 @@ const DesignedForSection = memo(() => (
   </motion.section>
 ));
 DesignedForSection.displayName = "DesignedForSection";
+
+/* ------------------------------ CTA SECTION ------------------------------ */
+
+const CTASection = memo(() => (
+  <motion.section
+    id="cta"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white text-center"
+  >
+    <motion.h2
+      className="text-5xl md:text-6xl font-extrabold mb-6"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      Get work done while you sleep.
+    </motion.h2>
+    <motion.p
+      className="text-lg md:text-2xl max-w-3xl mb-8 leading-relaxed"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.3, duration: 0.8 }}
+    >
+      Maximize your time. Wake up to progress. Experience OE1 today.
+    </motion.p>
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-xl hover:shadow-2xl transition"
+    >
+      Pre-Order Now
+    </motion.button>
+  </motion.section>
+));
+CTASection.displayName = "CTASection";
 
 /* ------------------------------- FAQ SECTION ------------------------------ */
 
@@ -395,7 +426,8 @@ export default function Home() {
       <HeroSection />
       <HowItWorksSection />
       <AboutSection />
-      <DesignedForSection />
+      {/* <DesignedForSection /> */}
+      <CTASection />
       <FAQSection />
     </div>
   );
