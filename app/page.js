@@ -163,11 +163,11 @@ const HowItWorksSection = memo(() => {
   const steps = [
     {
       title: "Assign Tasks",
-      desc: "Tell OE1 what you need.",
+      desc: "Tell OE 1 what you need.",
     },
     {
       title: "Sleep",
-      desc: "OE1 runs AI-powered workflows overnight.",
+      desc: "OE 1 runs AI-powered workflows overnight.",
     },
     {
       title: "Wake Up to Results",
@@ -178,11 +178,11 @@ const HowItWorksSection = memo(() => {
   return (
     <motion.section
       id="how-it-works"
-      className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+      className="relative z-10 flex flex-col items-center justify-center px-6 py-24 bg-black text-white"
     >
       <motion.h2
-        className="text-8xl md:text-6xl font-extrabold mb-8 text-center text-white"
-        initial={{ opacity: 0 }}
+        className="text-8xl md:text-6xl font-extrabold mb-16 text-center text-white"
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
@@ -211,13 +211,13 @@ const HowItWorksSection = memo(() => {
 });
 HowItWorksSection.displayName = "HowItWorksSection";
 
-/* ------------------------------ WHAT IS OE1? ------------------------------ */
+/* ------------------------------ WHAT IS OE 1? ------------------------------ */
 
 const AboutSection = memo(() => (
   <motion.section
     id="about"
     viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-center px-6 py-24 bg-black text-white"
   >
     <motion.h2
       className="text-8xl md:text-6xl font-black mb-8 text-center text-white"
@@ -225,7 +225,7 @@ const AboutSection = memo(() => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
     >
-      What is OE1?
+      What is OE 1?
     </motion.h2>
     <motion.p
       className="text-2xl md:text-2xl max-w-3xl text-center font-medium opacity-80 mb-8 leading-relaxed"
@@ -233,7 +233,7 @@ const AboutSection = memo(() => (
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
     >
-      OE1 is your personal AI agent that works overnight to complete tasks,
+      OE 1 is your personal AI agent that works overnight to complete tasks,
       generate insights, and prepare what you need—so you wake up with results,
       not to-dos.
     </motion.p>
@@ -248,7 +248,7 @@ const FeaturesSection = memo(() => {
     {
       emoji: "🚀",
       title: "Automate Workflows",
-      desc: "Give OE1 tasks, and it works while you sleep.",
+      desc: "Give OE 1 tasks, and it works while you sleep.",
     },
     {
       emoji: "🔍",
@@ -265,7 +265,7 @@ const FeaturesSection = memo(() => {
   return (
     <motion.section
       id="features"
-      className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+      className="relative z-10 flex flex-col items-center justify-center px-6 py-24 bg-black text-white"
     >
       <motion.h2
         className="text-8xl md:text-6xl font-extrabold mb-8 text-center"
@@ -306,7 +306,7 @@ const DesignedForSection = memo(() => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-center px-6 py-24 bg-black text-white"
   >
     <motion.h2
       className="text-4xl md:text-5xl font-extrabold mb-8 text-center"
@@ -346,10 +346,10 @@ DesignedForSection.displayName = "DesignedForSection";
 const CTASection = memo(() => (
   <motion.section
     id="cta"
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white text-center"
+    className="relative z-10 flex flex-col items-center justify-center px-6 py-24 bg-black text-white text-center"
   >
     <motion.h2
-      className="text-7xl md:text-6xl font-extrabold mb-6"
+      className="text-7xl md:text-6xl font-extrabold mb-12"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -357,18 +357,18 @@ const CTASection = memo(() => (
       Get work done while you sleep.
     </motion.h2>
     <motion.p
-      className="text-2xl md:text-2xl max-w-3xl mb-8 leading-relaxed"
+      className="text-2xl md:text-2xl max-w-3xl mb-16 leading-relaxed"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ delay: 0.3, duration: 0.8 }}
     >
-      Maximize your time. Wake up to progress. Experience <strong>OE1</strong>{" "}
+      Maximize your time. Wake up to progress. Experience <strong>OE 1</strong>{" "}
       today.
     </motion.p>
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-white text-black px-8 py-3 rounded-full text-lg font-black shadow-xl hover:shadow-2xl transition"
+      className="bg-white text-black px-8 py-4 rounded-full text-2xl font-black shadow-xl hover:shadow-2xl transition"
     >
       Pre-Order Now
     </motion.button>
@@ -380,47 +380,47 @@ CTASection.displayName = "CTASection";
 
 const faqData = [
   {
-    question: "What types of tasks can OE1 automate?",
+    question: "What types of tasks can OE 1 automate?",
     answer:
-      "OE1 can handle a range of tasks—from scheduling and data analysis to content generation and even code drafting—all tailored to your specific needs.",
+      "OE 1 can handle a range of tasks—from scheduling and data analysis to content generation and even code drafting—all tailored to your specific needs.",
   },
   {
-    question: "How does OE1 ensure the quality of its outputs?",
+    question: "How does OE 1 ensure the quality of its outputs?",
     answer:
-      "OE1 leverages advanced AI algorithms and continuous learning, integrating feedback loops to deliver high-quality, contextually relevant results.",
+      "OE 1 leverages advanced AI algorithms and continuous learning, integrating feedback loops to deliver high-quality, contextually relevant results.",
   },
   {
-    question: "Is my data secure with OE1?",
+    question: "Is my data secure with OE 1?",
     answer:
-      "Absolutely. OE1 uses industry-standard encryption and robust data protection protocols to ensure your information remains confidential and secure.",
+      "Absolutely. OE 1 uses industry-standard encryption and robust data protection protocols to ensure your information remains confidential and secure.",
   },
   {
     question: "Can I customize the AI workflows?",
     answer:
-      "Yes, OE1 is designed to be flexible. You can tailor workflows to match your specific requirements, ensuring optimal productivity.",
+      "Yes, OE 1 is designed to be flexible. You can tailor workflows to match your specific requirements, ensuring optimal productivity.",
   },
   {
-    question: "Who can benefit the most from using OE1?",
+    question: "Who can benefit the most from using OE 1?",
     answer:
-      "Busy professionals, entrepreneurs, researchers, developers, and creators can all leverage OE1 to automate repetitive tasks and gain valuable insights overnight.",
+      "Busy professionals, entrepreneurs, researchers, developers, and creators can all leverage OE 1 to automate repetitive tasks and gain valuable insights overnight.",
   },
 ];
 
 const FAQSection = memo(() => (
   <section
     id="faq"
-    className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-start px-6 py-24 bg-black text-white"
   >
     <div className="max-w-4xl w-full mx-auto">
       <motion.h2
-        className="text-4xl md:text-6xl font-semibold leading-relaxed text-center mb-8"
+        className="text-5xl md:text-8xl font-semibold leading-relaxed text-center mb-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         Got questions?
         <br />
-        <span className="inline-block text-white leading-relaxed">
+        <span className="inline-block text-white leading-relaxed mt-8">
           We’ve got answers.
         </span>
       </motion.h2>
@@ -436,7 +436,7 @@ FAQSection.displayName = "FAQSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative bg-black">
       <ParticleBackground />
       <NavBar />
       <HeroSection />
