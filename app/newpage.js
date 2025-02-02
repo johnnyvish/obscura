@@ -64,7 +64,6 @@ const ParticleBackground = memo(() => {
     />
   );
 });
-ParticleBackground.displayName = "ParticleBackground";
 
 const Logo = memo(() => (
   <motion.svg
@@ -89,7 +88,6 @@ const Logo = memo(() => (
     <circle cx="50" cy="50" r="20" stroke="url(#grad)" strokeWidth="6" />
   </motion.svg>
 ));
-Logo.displayName = "Logo";
 
 const navItems = ["How It Works", "About", "Designed For", "FAQ"];
 
@@ -100,7 +98,7 @@ const NavBar = memo(() => (
     initial={{ y: -100, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
-    className="flex justify-between items-center px-8 md:px-16 py-4 bg-black text-white fixed w-full z-50 backdrop-blur-lg shadow-2xl"
+    className="flex justify-between items-center px-8 md:px-16 py-4 bg-[#121212] text-white fixed w-full z-50 backdrop-blur-lg shadow-2xl"
     aria-label="Main Navigation"
   >
     <div className="flex items-center gap-3">
@@ -135,7 +133,7 @@ const NavBar = memo(() => (
       className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full flex items-center gap-3 font-semibold shadow-lg hover:shadow-2xl transition"
     >
       Pre-order
-      <div className="bg-black rounded-full w-6 h-6 flex items-center justify-center">
+      <div className="bg-[#121212] rounded-full w-6 h-6 flex items-center justify-center">
         <svg
           width="12"
           height="12"
@@ -155,7 +153,6 @@ const NavBar = memo(() => (
     </motion.button>
   </motion.nav>
 ));
-NavBar.displayName = "NavBar";
 
 /* ------------------------------ HOW IT WORKS ------------------------------ */
 
@@ -166,7 +163,7 @@ const HowItWorksSection = memo(() => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-[#121212] text-white"
   >
     <motion.h2
       className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
@@ -196,7 +193,7 @@ const HowItWorksSection = memo(() => (
       ].map((item, index) => (
         <motion.div
           key={item.title}
-          className="p-6 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
+          className="p-6 border border-gray-600 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
           custom={index}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +207,6 @@ const HowItWorksSection = memo(() => (
     </div>
   </motion.section>
 ));
-HowItWorksSection.displayName = "HowItWorksSection";
 
 /* ------------------------------ WHAT IS OE1? ------------------------------ */
 
@@ -221,7 +217,7 @@ const AboutSection = memo(() => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-[#121212] text-white"
   >
     <motion.h2
       className="text-5xl md:text-6xl font-extrabold mb-8 text-center bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent"
@@ -232,7 +228,7 @@ const AboutSection = memo(() => (
       What is OE1?
     </motion.h2>
     <motion.p
-      className="text-lg md:text-2xl max-w-3xl text-center font opacity-80 mb-8 leading-relaxed"
+      className="text-lg md:text-2xl max-w-3xl text-center opacity-80 mb-8 leading-relaxed"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
@@ -261,13 +257,13 @@ const AboutSection = memo(() => (
       ].map((feature, index) => (
         <motion.div
           key={feature.title}
-          className="p-6 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
+          className="p-6 border border-gray-600 rounded-xl bg-[#1e1e1e] hover:bg-[#2a2a2a] cursor-pointer"
           custom={index}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
         >
-          <h3 className="text-2xl font-bold mb-3 text-white">
+          <h3 className="text-2xl font-bold mb-3 text-amber-400">
             {feature.emoji} {feature.title}
           </h3>
           <p className="text-lg opacity-90">{feature.desc}</p>
@@ -283,7 +279,6 @@ const AboutSection = memo(() => (
     </motion.button>
   </motion.section>
 ));
-AboutSection.displayName = "AboutSection";
 
 /* ----------------------------- DESIGNED FOR ----------------------------- */
 
@@ -294,7 +289,7 @@ const DesignedForSection = memo(() => (
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true }}
-    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 bg-[#121212] text-white"
   >
     <motion.h2
       className="text-4xl md:text-5xl font-extrabold mb-8 text-center"
@@ -327,7 +322,6 @@ const DesignedForSection = memo(() => (
     </div>
   </motion.section>
 ));
-DesignedForSection.displayName = "DesignedForSection";
 
 /* ------------------------------- FAQ SECTION ------------------------------ */
 
@@ -362,7 +356,7 @@ const faqData = [
 const FAQSection = memo(() => (
   <section
     id="faq"
-    className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 py-24 bg-black text-white"
+    className="relative z-10 flex flex-col items-center justify-start min-h-screen px-6 py-24 bg-[#121212] text-white"
   >
     <div className="max-w-4xl w-full mx-auto">
       <motion.h2
@@ -383,13 +377,12 @@ const FAQSection = memo(() => (
     </div>
   </section>
 ));
-FAQSection.displayName = "FAQSection";
 
 /* ------------------------------- MAIN COMPONENT ------------------------------ */
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-black to-[#1a1a1a]">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#121212] to-[#1a1a1a]">
       <ParticleBackground />
       <NavBar />
       <HeroSection />
