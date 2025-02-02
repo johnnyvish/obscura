@@ -420,7 +420,7 @@ const FAQSection = memo(() => (
       >
         Got questions?
         <br />
-        <span className="inline-block text-white leading-relaxed mt-8">
+        <span className="text-4xl md:text-8xl inline-block text-white leading-relaxed">
           We’ve got answers.
         </span>
       </motion.h2>
